@@ -1,33 +1,30 @@
 module.exports = (sequelize, DataTypes) => {
-    const Companies = sequelize.define("Companies", {
+    const Peoples = sequelize.define("Peoples", {
         name: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        adress: {
+        surname: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        city: {
+        resume: {
             type: DataTypes.STRING,
-            allowNull: false
         },
-        zipcode: {
+        catchPhrase: {
             type: DataTypes.STRING,
-            allowNull: false
         },
         description: {
             type: DataTypes.STRING,
-            allowNull: false
         },
-        
     })
 
-    Companies.associate = (models) => {
-        Companies.hasMany(models.Jobs, {
+    Peoples.associate = (models) => {
+        // Jobs.belongsTo(models.Companies)
+        Peoples.hasMany(models.Applications, {
             onDelete: "cascade",
         })
     }
 
-    return Companies
+    return Peoples
 }

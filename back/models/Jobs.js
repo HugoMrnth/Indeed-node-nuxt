@@ -24,12 +24,14 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false
         },
-        // company: {
-        //     type: DataTypes.STRING,
-        //     allowNull: false
-        // },
-        
     })
+
+    Jobs.associate = (models) => {
+        Jobs.belongsTo(models.Companies)
+        Jobs.hasMany(models.Applications, {
+            onDelete: "cascade",
+        })
+    }
 
     return Jobs
 }
