@@ -14,7 +14,10 @@ const db = require('./models');
 const peopleRouter = require('./routes/Peoples');
 app.use("/peoples", peopleRouter);
 
-db.sequelize.sync().then(() => {
+const jobRouter = require('./routes/Jobs');
+app.use("/jobs", jobRouter);
+
+db.sequelize.sync({ force: true}).then(() => {
     app.listen(PORT, () => {
         console.log(`App listening on port ${PORT}`);
     })
