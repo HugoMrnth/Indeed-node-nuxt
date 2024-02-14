@@ -10,8 +10,8 @@
         </div>
         <template #footer>
             <div class="flex justify-between items-center">
-                <p>Published {{ daysFromNow(job.createdAt) }} days ago</p>
-                <NuxtLink :to="`/jobs`" ><UButton>Learn more</UButton></NuxtLink>
+                <p>{{ daysFromNow(job.createdAt) }}</p>
+                <NuxtLink :to="`/jobs/${job.id}`" ><UButton>Learn more</UButton></NuxtLink>
             </div>
         </template>
   </UCard>
@@ -21,7 +21,6 @@
 
 const { job } = defineProps(['job'])
 onMounted(() => {
-    console.log(job.title);
 })
 
 function daysFromNow(date){
@@ -29,12 +28,10 @@ function daysFromNow(date){
     let date_2 = new Date();
     let difference = date_2.getTime() - date_1.getTime();
     let TotalDays = Math.ceil(difference / (1000 * 3600 * 24));
-    return TotalDays    
+    let days = TotalDays > 1 ? 'days' : 'day'; 
+    return `Published ${TotalDays} ${days} ago`    
 }
-
-
 </script>
-ep:location
 <style scoped>
 
 </style>

@@ -7,6 +7,12 @@ router.get('/',async (req, res) => {
     res.json(allJobs);
 })
 
+router.get('/:id', async (req, res) => {
+    const id = req.params.id;
+    const job = await Jobs.findOne({ where: { id: id } });
+    res.json(job);
+});
+
 router.post('/', async (req, res) => {
     const job = req.body;
     await Jobs.create(job);

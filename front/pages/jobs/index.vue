@@ -8,9 +8,8 @@
 </template>
 
 <script setup>
-    const { data: jobs } = useFetch('http://localhost:5000/jobs')
+    const { data: jobs } = await useFetch('http://localhost:5000/jobs')
     onMounted(() => {
-        console.log(jobs);
     })
 </script>
 
