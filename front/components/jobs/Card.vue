@@ -2,6 +2,7 @@
 <template>
     <UCard>
         <template #header>
+            <p class="text-gray-700 mx-4 mb-5">{{ job.Company.name }}</p>
             <p class="font-bold text-gray-900 m-4 truncate text-xl">{{ job.title }}</p>
         </template>
         <div class="h-36 flex flex-col justify-between">
@@ -10,7 +11,7 @@
         </div>
         <template #footer>
             <div class="flex justify-between items-center">
-                <p>{{ daysFromNow(job.createdAt) }}</p>
+                <p class="text-gray-500">{{ daysFromNow(job.createdAt) }}</p>
                 <NuxtLink :to="`/jobs/${job.id}`" ><UButton>Learn more</UButton></NuxtLink>
             </div>
         </template>
