@@ -24,6 +24,7 @@ module.exports = (sequelize, DataTypes) => {
     })
 
     Companies.associate = (models) => {
+        Companies.belongsTo(models.Companies)
         Companies.hasMany(models.Jobs, {
             onDelete: "cascade",
         })

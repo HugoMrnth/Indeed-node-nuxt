@@ -10,6 +10,10 @@ body {
     color: #12b488
 }
 
+li {
+  @apply cursor-pointer;
+}
+
 @layer components {
   .btn {
     @apply bg-[#12b488] text-white px-3 py-2 rounded-md text-sm text-white;

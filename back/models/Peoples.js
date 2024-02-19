@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
     })
 
     Peoples.associate = (models) => {
-        // Jobs.belongsTo(models.Companies)
+        Peoples.belongsTo(models.Companies)
         Peoples.hasMany(models.Applications, {
             onDelete: "cascade",
         })

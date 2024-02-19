@@ -17,7 +17,8 @@ app.use("/peoples", peopleRouter);
 const jobRouter = require('./routes/Jobs');
 app.use("/jobs", jobRouter);
 
-
+const authRouter = require('./routes/Users');
+app.use("/auth", authRouter)
 // { force: true} -> pour actualiser la bdd au changements de models
 db.sequelize.sync().then(() => {
     app.listen(PORT, () => {

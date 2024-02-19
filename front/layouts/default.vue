@@ -7,6 +7,7 @@
                     <li><NuxtLink to="/">Home</NuxtLink></li>
                     <li><NuxtLink to="/jobs">Jobs</NuxtLink></li>
                     <li><NuxtLink to="/jobs/add">Add</NuxtLink></li>
+                    <li><NuxtLink to="/auth">Sign in</NuxtLink></li>
                 </ul>
             </nav>            
         </header>
