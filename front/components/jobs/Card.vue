@@ -21,8 +21,6 @@
 <script setup>
 
 const { job } = defineProps(['job'])
-onMounted(() => {
-})
 
 function daysFromNow(date){
     let date_1 = new Date(date);

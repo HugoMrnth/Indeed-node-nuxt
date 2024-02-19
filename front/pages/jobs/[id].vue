@@ -36,7 +36,6 @@
 const route = useRoute();
 const id = route.params.id;
 const { data: job } = await useFetch(`http://localhost:5000/jobs/${id}`)
-console.log(job.value);
 function daysFromNow(date){
     let date_1 = new Date(date);
     let date_2 = new Date();

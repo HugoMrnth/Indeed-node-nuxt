@@ -1,18 +1,23 @@
 <template>
     <div>
-        <h1>Home</h1>
-        <div v-for="p in peoples" :key="p.id">
-            <p>{{ p.name }}</p>
-            <p>test</p>
-        </div>
+        <NuxtLayout :name="layout">
+            <div>
+                <h1 class="font-bold text-xl">Home</h1>
+            </div>
+        </NuxtLayout>
     </div>
 </template>
 
 <script setup>
-    const { data: peoples } = useFetch('http://localhost:5000/peoples')
-    onMounted(() => {
-        console.log(peoples);
-    })
+const { session } = await useSession();
+const layout = ref(session.value.accessToken ? "logged" : "default");
+definePageMeta({
+    layout: false
+    // middleware: [
+    //     'auth',
+    //     // Add in more middleware here
+    // ]
+});
 </script>
 
 <style scoped>

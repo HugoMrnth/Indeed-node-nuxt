@@ -1,12 +1,11 @@
 <template>
     <div>
         <header class="shadow-sm bg-white">
-            <nav class="container mx-auto p-4 flex justify-between">
+            <nav class="container mx-auto w-12/12 flex justify-between h-16 items-center">
                 <NuxtLink to="/" class="font-bold">Indidier</NuxtLink>
-                <ul class="flex gap-4">
+                <ul class="flex gap-4 items-center">
                     <li><NuxtLink to="/">Home</NuxtLink></li>
                     <li><NuxtLink to="/jobs">Jobs</NuxtLink></li>
-                    <li><NuxtLink to="/jobs/add">Add</NuxtLink></li>
                     <li><NuxtLink to="/auth">Sign in</NuxtLink></li>
                 </ul>
             </nav>            
@@ -19,7 +18,6 @@
 </template>
 
 <script setup>
-
 </script>
 
 <style scoped>

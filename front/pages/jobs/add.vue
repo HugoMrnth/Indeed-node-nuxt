@@ -8,7 +8,13 @@
 </template>
 
 <script setup>
-
+definePageMeta({
+    layout: 'logged',
+    middleware: [
+        'is-a-company',
+        // Add in more middleware here
+    ]
+});
 </script>
 
 <style scoped>

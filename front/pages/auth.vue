@@ -20,6 +20,12 @@
 </template>
 
 <script setup>
+definePageMeta({
+  middleware: [
+    'logged',
+    // Add in more middleware here
+  ]
+});
 const tabList = [
     {
         id: 0,
