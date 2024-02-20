@@ -11,6 +11,7 @@
 definePageMeta({
     layout: 'logged',
     middleware: [
+        'auth',
         'is-a-company',
         // Add in more middleware here
     ]

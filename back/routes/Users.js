@@ -4,7 +4,7 @@ const { Users, Companies, Peoples } = require('../models');
 const { validateToken } = require('../middlewares/AuthMiddleware');
 const bcrypt = require('bcrypt');
 
-const { sign } = require('jsonwebtoken')
+const { sign, decode } = require('jsonwebtoken')
 
 router.get("/",async (req, res) => {
     const allPeoples = await Users.findAll();
@@ -13,6 +13,12 @@ router.get("/",async (req, res) => {
 
 router.get("/logged", validateToken, async (req, res) => {
     return res.json(true);
+})
+
+router.get("/isACompany", validateToken, async (req, res) => {
+    const decoded = decode(req.header('accessToken'))
+    const user = await Users.findOne({ where: { email: decoded.email }})
+    res.json(user.isACompany);
 })
 
 router.post("/registration", async (req, res) => {
