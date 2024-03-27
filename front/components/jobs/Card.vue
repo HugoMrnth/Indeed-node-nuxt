@@ -2,7 +2,7 @@
 <template>
     <UCard>
         <template #header>
-            <p class="text-gray-700 mx-4 mb-5">{{ job.Company.name }}</p>
+            <p class="text-gray-700 mx-4 mb-5" v-if="job.Company.name">{{ job.Company.name }}</p>
             <p class="font-bold text-gray-900 m-4 truncate text-xl">{{ job.title }}</p>
         </template>
         <div class="h-36 flex flex-col justify-between">

@@ -15,6 +15,8 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
     const job = req.body;
+    job.CompanyId = 1;
+    console.log(job)
     await Jobs.create(job);
     res.json(job);
 })
